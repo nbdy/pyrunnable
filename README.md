@@ -1,4 +1,5 @@
 ## pyrunnable
+[![Build Status](https://build.eberlein.io/buildStatus/icon?job=python_pyrunnable)](https://build.eberlein.io/job/python_pyrunnable/)
 ### why?
 i just can't be bothered to write the same boilerplate code over and over again. <br>
 so i wrote it into a little library.<br>
