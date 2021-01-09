@@ -10,20 +10,20 @@ class Runnable(Thread):
             self.__dict__.update(kwargs)
         self.do_run = True
 
-    def run(self) -> None:
-        self.on_start()
+    async def run(self) -> None:
+        await self.on_start()
         while self.do_run:
-            self.work()
-        self.on_stop()
+            await self.work()
+        await self.on_stop()
 
-    def stop(self):
+    async def stop(self):
         self.do_run = False
 
-    def on_start(self):
+    async def on_start(self):
         pass
 
-    def on_stop(self):
+    async def on_stop(self):
         pass
 
-    def work(self):
+    async def work(self):
         pass
