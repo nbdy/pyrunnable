@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    long_description=open("README.rst", "r").read(),
+    long_description=open("README.md", "r").read(),
     name="pyrunnable",
     version="0.43",
     description="threading.Thread wrapper with convenient functions",
