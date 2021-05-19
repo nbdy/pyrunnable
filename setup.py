@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     long_description=open("README.rst", "r").read(),
     name="pyrunnable",
-    version="0.42",
+    version="0.43",
     description="threading.Thread wrapper with convenient functions",
     author="Pascal Eberlein",
     author_email="pascal@eberlein.io",
@@ -16,5 +16,6 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     keywords="threading.Thread wrapper",
-    packages=find_packages()
+    packages=find_packages(),
+    long_description_content_type="text/markdown"
 )

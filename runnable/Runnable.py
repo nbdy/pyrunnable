@@ -1,4 +1,5 @@
 from threading import Thread
+from time import sleep
 
 
 class Runnable(Thread):
@@ -15,6 +16,13 @@ class Runnable(Thread):
         while self.do_run:
             self.work()
         self.on_stop()
+
+    @staticmethod
+    def sleep(n: float):
+        try:
+            sleep(n)
+        except KeyboardInterrupt:
+            pass
 
     def stop(self):
         self.do_run = False

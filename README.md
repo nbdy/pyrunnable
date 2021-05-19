@@ -29,7 +29,7 @@ class ThreadedObject(Runnable):
     
     def work(self):
         print("working")
-        sleep(0.42)  # be nice to the cpu
+        self.sleep(0.42)  # be nice to the cpu
 
     def on_stop(self):
         print("we finished working. time for beer")
