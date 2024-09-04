@@ -1,38 +1,41 @@
-## pyrunnable
-[![Build Status](https://build.eberlein.io/buildStatus/icon?job=python_pyrunnable)](https://build.eberlein.io/job/python_pyrunnable/)
-### why?
-i just can't be bothered to write the same boilerplate code over and over again. <br>
-so i wrote it into a little library.<br>
-<br>
-it has the 'android' lifecycle in mind:
-- on_start (before the loop gets called)
-- work (in the loop)
-- on_stop (when the loop has finished)
+# pyrunnable
 
-also it has a useful function called 'stop'
-### how to...
-#### ... install
+a wrapper around threading.Thread with convenience functions like
+
+- on_start (called after starting the runnable with .start)
+- on_stop (called after stopping the runnable with .stop)
+- work (executed cyclically until .stop is called)
+
+that you can override, as well as
+
+- stop
+
+which i was missing in threading.Thread
+
+## how to...
+
+### ... install
+
 ```shell script
-pip3 install git+https://github.com/smthnspcl/pyrunnable
+pip install pyrunnable
 ```
-#### ... use it
+
+### ... use it
+
 ```python
-from runnable import Runnable
+from pyrunnable import Runnable
 from time import sleep
 
 class ThreadedObject(Runnable):
-    def __init__(self, **kwargs):  # not necessary but included for the sake of completeness
-        Runnable.__init__(self, **kwargs)  # gotta super to Runnable as you would with Thread
-
     def on_start(self):
-        print("we are going to run in a loop")
+        print("starting")
     
     def work(self):
         print("working")
-        self.sleep(0.42)  # be nice to the cpu
+        sleep(0.2)
 
     def on_stop(self):
-        print("we finished working. time for beer")
+        print("stopping")
 
 o = ThreadedObject()
 try:
