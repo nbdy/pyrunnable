@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyrunnable"
-version = "1.0.0"
-requires-python = ">= 3.8"
+version = "1.0.1"
+requires-python = ">=3.6"
 authors = [{name = "nbdy"}]
 maintainers = [{name = "nbdy"}]
 readme = "README.md"
